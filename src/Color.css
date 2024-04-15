@@ -1,0 +1,24 @@
+@layer components {
+    :root {
+        --header-color-light: #eee5e596;
+        --header-color-dark: #1c1c1c8a;
+        --profile-light: #e2e2e2a8;
+        --profile-dark: #1111117a; 
+        --text-light: black;
+        --text-dark: whitesmoke;
+        --content-light:rgba(215, 214, 214, 0.905);
+        --content-dark: #272626af; 
+        --icon-light: #f3f3f3a0;
+        --icon-dark: #333333;
+        --nav-light: #ffffffee;
+        --nav-dark: #0f0f0f;
+        --card-light:#c4c4c4b4;
+        --card-item-light:#939393;
+        --card-item-dark:black;
+        --input-light: #b9b7b7b9;
+        --input-dark: #342f2f96;
+        --form-light: #f3f3f3a0;
+        --form-dark: #ffffff00;
+    }
+    
+  }

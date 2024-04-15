@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/media.css">
+    <link rel="stylesheet" href="src/Color.css">
+    <title>Portfolio</title>
+    <style>
+        /* CSS styles here */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            background-color: gray;
+        }
+
+        .content {
+            display: none;
+            background-color: #1b1818a6;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            color: var(--text-dark);
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .card h2 {
+            color: var(--text-dark);
+        }
+
+        nav ul a:hover {
+            background-color: rgb(248, 127, 127);
+        }
+
+        .toggleLink.active {
+            background-color: rgb(248, 127, 127);
+        }
+
+        label {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="w-full h-20 rounded-xl">
+        <div style="background-color: var(--header-color-dark);"
+            class=" rounded-2xl flex items-center h-20 justify-between w-9/12 m-auto p-10">
+            <span class="font-semibold font-serif text-3xl text-red-300 animated-line">Portfolio</span>
+            <div class="switch w-12 rounded-full p-2 cursor-pointer"
+                style="background-color: var(--icon-dark); transition: background-color 0.3s;"
+                onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                onmouseout="this.style.backgroundColor = 'var(--icon-dark)'">
+                <img src="sun-svgrepo-com.svg" alt="">
+            </div>
+        </div>
+    </header>
+    <div class="container w-screen m-auto z-[3] p-4 relative mt-48">
+        <div class="container_child row flex gap-8 ">
+            <div class="w-1/3 profile">
+                <div style="background-color: var(--profile-dark); color: var(--text-dark);"
+                    class="personal_info_area sticky top-[10rem] p-4 rounded-3xl">
+                    <div class="personal_info flex flex-col gap-[1.1rem] items-center justify-between text-center">
+                        <div
+                            class="profile_image img w-60 h-60 flex items-center justify-center rounded-3xl mt-[-180px] mb-5 ml-auto mr-auto">
+                            <img class="rounded-3xl" src="profile.jpeg" alt="">
+                        </div>
+                        <h4 class="name text-5xl">
+                            Divyanshu
+                        </h4>
+                        <div style="background-color: var(--content-dark); color: var(--text-dark)"
+                            class="bio pl-4 pr-4 pt-3 pb-3 rounded-2xl font-semibold text-lg font-mono">
+                            <span class="m-4" id="typewriter"></span>
+                        </div>
+                        <div class="socials text-center">
+                            <ul class="flex w-9/12 gap-2 m-auto">
+                                <a href=""><img style="background-color: var(--content-dark);"
+                                        class="w-16 p-[6px] rounded-xl" src="socials/linkedin.svg" alt=""></a>
+                                <a href=""><img style="background-color: var(--content-dark);"
+                                        class="w-16 p-[6px] rounded-xl" src="socials/gmail.svg" alt=""></a>
+                                <a href=""><img style="background-color: var(--content-dark);"
+                                        class="w-16 p-[6px] rounded-xl" src="socials/github.svg" alt=""></a>
+                                <a href=""><img style="background-color: var(--content-dark);"
+                                        class="w-16 p-[6px] rounded-xl" src="socials/instagram.svg" alt=""></a>
+                            </ul>
+                        </div>
+                        <div style="background-color: var(--content-dark); color: var(--text-dark); border-radius: 15px;"
+                            class="contact pl-6 pr-6 p-2 font-semibold">
+                            <div class="contact_items pt-2 pb-2 flex gap-4 items-center m-2">
+                                <div style="background-color: var(--icon-dark);" class="icon w-12 h-12 rounded-lg p-2">
+                                    <img class="hover:invert" src="icons/iphone-svgrepo-com.svg" alt="">
+                                </div>
+                                <div class="text flex flex-col text-start gap-1">
+                                    <span>Phone</span>
+                                    <p>+91 952860322</p>
+                                </div>
+                            </div>
+                            <div class="contact_items pt-2 pb-2 flex gap-4 items-center m-2 border-t border-gray-500">
+                                <div style="background-color: var(--icon-dark);" class="icon w-12 h-12 rounded-lg p-2">
+                                    <img class="hover:invert" src="icons/mail-open-svgrepo-com.svg" alt="">
+                                </div>
+                                <div class="text flex flex-col text-start gap-1">
+                                    <span>Email</span>
+                                    <p>divyanshukushwah2003@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact_items pt-2 pb-2 flex gap-4 items-center m-2 border-t border-gray-500">
+                                <div style="background-color: var(--icon-dark);" class="icon w-12 h-12 rounded-lg p-2">
+                                    <img class="hover:invert" src="icons/location-pin-alt-1-svgrepo-com.svg" alt="">
+                                </div>
+                                <div class="text flex flex-col text-start gap-1">
+                                    <span>Location</span>
+                                    <p>Uttar Pradesh, india</p>
+                                </div>
+                            </div>
+                            <div class="contact_items pt-2 pb-2 flex gap-4 items-center m-2 border-t border-gray-500">
+                                <div style="background-color: var(--icon-dark);" class="icon w-12 h-12 rounded-lg p-2">
+                                    <img class="hover:invert" src="icons/calender-svgrepo-com.svg" alt="">
+                                </div>
+                                <div class="text flex flex-col text-start gap-1">
+                                    <span>Birthday</span>
+                                    <p>Jan 9, 2003</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn mb-4">
+                            <button class="bg-red-300 pr-8 pl-8 p-4 rounded-3xl border-white border font-mono font-semibold text-2xl hover:bg-red-400">Download
+                                CV</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right w-2/3 flex flex-col gap-8 items-end">
+                <nav class="bg-[#1d1c1ca4] w-[70%] rounded-2xl">
+                    <ul class="flex gap-4 justify-evenly py-4 px-2 items-center text-center">
+                        <a href=""
+                            style="background-color: var(--content-dark); color: var(--text-dark); transition: background-color 0.3s;"
+                            class="toggleLink flex items-center flex-col justify-center w-[15%] rounded-xl p-4 m-auto font-semibold"
+                            onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                            onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                            <span class="text-2xl mb-3">
+                                <i><img class="w-8" src="icons/profile-1336-svgrepo-com.svg" alt=""></i>
+                            </span>
+                            <div>About</div>
+                        </a>
+                        <a href=""
+                            style="background-color: var(--content-dark); color: var(--text-dark); transition: background-color 0.3s;"
+                            class="toggleLink flex items-center flex-col justify-center w-[15%] rounded-xl p-4 m-auto font-semibold"
+                            onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                            onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                            <span class="text-2xl mb-3">
+                                <i><img class="w-8" src="icons/document-svgrepo-com.svg" alt=""></i>
+                            </span>
+                            <div>Resume</div>
+                        </a>
+                        <a href=""
+                            style="background-color: var(--content-dark); color: var(--text-dark); transition: background-color 0.3s;"
+                            class="toggleLink flex items-center flex-col justify-center w-[15%] rounded-xl p-4 m-auto font-semibold"
+                            onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                            onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                            <span class="text-2xl mb-3">
+                                <i><img class="w-8" src="icons/work-case-svgrepo-com.svg" alt=""></i>
+                            </span>
+                            <div>Projects</div>
+                        </a>
+                        <a href=""
+                            style="background-color: var(--content-dark); color: var(--text-dark); transition: background-color 0.3s;"
+                            class="toggleLink flex items-center flex-col justify-center w-[15%] rounded-xl p-4 m-auto font-semibold"
+                            onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                            onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                            <span class="text-2xl mb-3">
+                                <i><img class="w-8" src="icons/tools-svgrepo-com.svg" alt=""></i>
+                            </span>
+                            <div>Tools</div>
+                        </a>
+                        <a href=""
+                            style="background-color: var(--content-dark); color: var(--text-dark); transition: background-color 0.3s;"
+                            class="toggleLink flex items-center flex-col justify-center w-[15%] rounded-xl p-4 m-auto font-semibold"
+                            onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                            onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                            <span class="text-2xl mb-3">
+                                <i><img class="w-7" src="icons/book-contact-ui-web-svgrepo-com.svg" alt=""></i>
+                            </span>
+                            <div>Contact</div>
+                        </a>
+                    </ul>
+                </nav>
+                <div class="content section active" class="about">
+                    <div class="about_1 p-4 ml-16 flex flex-col gap-6 w-[90%]">
+                        <div class="flex gap-6 pt-8 items-center text-center mb-10">
+                            <h1 class="font-semibold text-4xl">About</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[30%]  border-none">
+                        </div>
+                        <p class="text-xl">I'm Creative Frontend and UI/UX Designer from Uttar Pradesh, India, working
+                            in web development and Designing. I enjoy turning complex problems into simple, beautiful
+                            and intuitive designs.</p>
+                        <p class="text-xl">My aim is to bring across your message and identity in the most creative way.
+                            I created web design for many famous brand companies.</p>
+                    </div>
+                    <div class="about_2 flex flex-col gap-8">
+                        <div class="projects_2 flex gap-6 pt-8 w-[85%] m-auto items-center pl-4">
+                            <img class="svg w-12" src="icons/copypen.svg" alt="">
+                            <h1 class="font-semibold text-3xl">What I Do</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[20%]  border-none">
+                        </div>
+                        <div class="about_wrapper text-white w-[82%] m-auto mb-6">
+                            <div class="card bg-[#1b1818a6] border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="card_child row flex gap-4 items-start">
+                                    <div class="col flex justify-center w-1/3">
+                                        <img src="icons/html.svg" alt="">
+
+                                    </div>
+                                    <div class="col flex flex-col gap-6">
+                                        <h2 class="font-semibold text-2xl pt-2">Frontend Designing</h2>
+                                        <p class="text-lg text-gray-500 font-semibold font-serif">Lorem ipsum dolor, sit
+                                            amet consectetur adipisicing elit. Placeat
+                                            exercitationem itaque porro cumque officia eaque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-[#1b1818a6] border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="card_child  row flex gap-4 items-start pt-2">
+                                    <div class="col w-1/2 flex justify-center">
+                                        <img src="icons/user-interface-svgrepo-com.svg" alt="">
+
+                                    </div>
+                                    <div class="col flex flex-col gap-6">
+                                        <h2 class="font-semibold text-2xl pt-2">UIUX Designer</h2>
+                                        <p class="text-lg text-gray-500 font-semibold font-serif">Lorem ipsum dolor, sit
+                                            amet consectetur adipisicing elit. Placeat
+                                            exercitationem itaque porro cumque officia eaque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-[#1b1818a6] border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="card_child  row flex gap-4 items-start">
+                                    <div class="col flex justify-center w-1/2">
+                                        <img src="icons/design-svgrepo-com.svg" alt="">
+
+                                    </div>
+                                    <div class="col flex flex-col gap-6">
+                                        <h2 class="font-semibold text-2xl pt-2">Logo Designing</h2>
+                                        <p class="text-lg text-gray-500 font-semibold font-serif">Lorem ipsum dolor, sit
+                                            amet consectetur adipisicing elit. Placeat
+                                            exercitationem itaque porro cumque officia eaque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-[#1b1818a6] border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="card_child  row flex gap-4 items-start">
+                                    <div class="col flex justify-center w-1/2">
+                                        <img src="icons/editor-films-production-svgrepo-com.svg" alt="">
+
+                                    </div>
+                                    <div class="col flex flex-col gap-6">
+                                        <h2 class="font-semibold text-2xl pt-2">Photo/Video Editing</h2>
+                                        <p class="text-lg text-gray-500 font-semibold font-serif">Lorem ipsum dolor, sit
+                                            amet consectetur adipisicing elit. Placeat
+                                            exercitationem itaque porro cumque officia eaque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="footer bg-gray-800 text-center font-semibold text-xl p-4 rounded-br-xl rounded-bl-2xl"> ©
+                        2024 All Rights Reserved </div>
+                </div>
+                <div class="content section" class="resume">
+                    <div class="resume_1 p-4 ml-16 flex flex-col gap-6 w-[90%]">
+                        <div class="flex gap-6 pt-8 items-center text-center mb-10">
+                            <h1 class="font-semibold text-4xl">Resume</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[30%]  border-none">
+                        </div>
+                        <p class="text-xl">
+                            As a BTech student aspiring to become a web developer, I actively pursued online internships
+                            to enhance my skills. Through diverse projects, I honed my abilities, embracing learning
+                            opportunities and practical applications. Additionally, I undertook personal projects,
+                            further refining my skills through hands-on practice and continuous self-improvement
+                            efforts.</p>
+                    </div>
+                    <div class="resume_2 grid grid-cols-2 p-4 w-[90%] m-auto justify-center gap-8">
+                        <div class="left p-4 w-fit flex flex-col gap-4">
+                            <div class=" flex items-center">
+                                <img class="svg w-12" src="icons/hat.svg" alt="">
+                                <h1 class="font-semibold text-3xl p-4"> Education</h1>
+                                <hr class="bg-red-600 h-[2px] rounded-full w-[15%]  border-none">
+                            </div>
+                            <div class="card bg-[#1b1818a6] border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="row flex flex-col gap-2 items-start">
+                                    <span class="font-medium text-lg text-gray-600">2021 - Present</span>
+                                    <div class="flex items-center gap-4">
+                                        <h1 style="color: var(--text-dark);" class="font-medium text-[1.3rem]">B.Tech.
+                                        </h1>
+                                        <h1 class="font-medium text-xl text-gray-600">GLBITM</h1>
+                                    </div>
+                                    <span class="font-medium text-lg text-gray-600">Greater Noida,Uttar Pradesh</span>
+                                </div>
+                            </div>
+                            <div class="bg-[#1b1818a6] card border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="row flex flex-col gap-2 items-start">
+                                    <span class="font-medium text-lg text-gray-600">2019 - 2020</span>
+                                    <div class="flex items-center gap-4">
+                                        <h1 style="color: var(--text-dark);" class="font-medium text-[1.3rem]">12th
+                                        </h1>
+                                        <h1 class="font-medium text-xl text-gray-600">Symboyzia School</h1>
+                                    </div>
+                                    <span class="font-medium text-lg text-gray-600">Agra,Uttar Pradesh</span>
+                                </div>
+                            </div>
+                            <div class="bg-[#1b1818a6] card border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="row flex flex-col gap-2 items-start">
+                                    <span class="font-medium text-lg text-gray-600">2017 - 2018</span>
+                                    <div class="flex items-center gap-4">
+                                        <h1 style="color: var(--text-dark);" class="font-medium text-[1.3rem]">10th
+                                        </h1>
+                                        <h1 class="font-medium text-xl text-gray-600">MS Public School</h1>
+                                    </div>
+                                    <span class="font-medium text-lg text-gray-600">Agra,Uttar Pradesh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right p-4 w-fit flex flex-col gap-4">
+                            <div class="flex items-center">
+                                <img class="svg w-12" src="icons/bag.svg" alt="">
+                                <h1 class="font-semibold text-4xl p-4"> Interships</h1>
+                                <hr class="bg-red-600 h-[2px] rounded-full w-[15%]  border-none">
+                            </div>
+                            <div class="bg-[#1b1818a6] card border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="row flex flex-col gap-2 items-start">
+                                    <span class="font-medium text-lg text-gray-600">May, 2023</span>
+                                    <div class="flex items-center gap-2">
+                                        <h1 style="color: var(--text-dark);" class="font-medium text-[1.3rem]">Virtual
+                                            Internship -</h1>
+                                        <h1 class="font-medium text-xl text-gray-600">Bharat Intern</h1>
+                                    </div>
+                                    <span class="font-medium text-lg text-gray-600">Greater Noida,Uttar Pradesh</span>
+                                </div>
+                            </div>
+                            <div class="bg-[#1b1818a6] card border-gray-300 border-[1px] p-4 rounded-lg">
+                                <div class="row flex flex-col gap-2 items-start">
+                                    <span class="font-medium text-lg text-gray-600">Sept - Nov, 2023</span>
+                                    <div class="flex items-center gap-2">
+                                        <h1 style="color: var(--text-dark);" class="font-medium text-[1.3rem] ">Cloud
+                                            Virtual Internship -</h1>
+                                        <h1 class="font-medium text-xl text-gray-600">AWS</h1>
+                                    </div>
+                                    <span class="font-medium text-lg text-gray-600">Greater Noida,Uttar Pradesh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume_3 flex gap-4 bg-red p-2 m-auto justify-center mb-8 w-[88%]">
+                        <div class="left flex flex-col gap-4 p-2 w-1/2 ">
+                            <div class="flex items-center">
+                                <img class="svg w-12" src="icons/gear.svg" alt="">
+                                <h1 class="font-semibold text-4xl p-4"> Skills</h1>
+                                <hr class="bg-red-600 h-[2px] rounded-full w-[15%]  border-none">
+                            </div>
+                            <ul class="bg-[#1b1818a6] flex flex-wrap gap-4  p-3 rounded-xl">
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/HTML LOGO.svg" alt="">
+                                    <span class="font-bold text-lg">HTML</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/CSS LOGO.svg" alt="">
+                                    <span class="font-bold text-lg">CSS</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/JS LOGO.svg" alt="">
+                                    <span class="font-bold text-lg">JS</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/REACT LOGO.svg" alt="">
+                                    <span class="font-bold text-lg">React-js</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-8" src="icons/C.svg" alt="">
+                                    <span class="font-bold text-lg">C</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/C++.svg" alt="">
+                                    <span class="font-bold text-lg">C++</span>
+                                </li>
+                                <li
+                                    class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit pl-2 pr-2 p-1 gap-2 ">
+                                    <img class="w-12" src="icons/PYTHON LOGO.svg" alt="">
+                                    <span class="font-bold text-lg">Python-Basic</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right flex flex-col gap-4 p-2 w-1/2">
+                            <div class="flex items-center">
+                                <img class="svg w-12" src="icons/bulb.svg" alt="">
+                                <h1 class="font-semibold text-4xl p-4"> Knowledge</h1>
+                                <hr class="bg-red-600 h-[2px] rounded-full w-[15%]  border-none">
+                            </div>
+                            <ul class="bg-[#1b1818a6] flex flex-wrap gap-4 p-3 rounded-xl">
+                                <li class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit p-2 gap-2">
+
+                                    <span class="font-bold text-lg">Frontend</span>
+                                </li>
+                                <li class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit p-2 gap-2">
+
+                                    <span class="font-bold text-lg">UX/UI</span>
+                                </li>
+                                <li class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit p-2 gap-2">
+
+                                    <span class="font-bold text-lg">Problem Solving</span>
+                                </li>
+                                <li class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit p-2 gap-2">
+
+                                    <span class="font-bold text-lg">Logo Design</span>
+                                </li>
+                                <li class="bg-[#252525a6] flex items-center rounded-lg justify-center w-fit p-2 gap-2">
+
+                                    <span class="font-bold text-lg">Photo/Video editing</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer bg-gray-800 text-center font-semibold text-xl p-4 rounded-br-xl rounded-bl-2xl"> ©
+                        2024 All Rights Reserved </div>
+                </div>
+                <div class="content section" class="projects">
+                    <div class="projects_1 p-4 ml-16 flex flex-col gap-6 w-[90%]">
+                        <div class="flex gap-6 pt-8 items-center text-center mb-10">
+                            <h1 class="font-semibold text-4xl">Projects</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[30%]  border-none">
+                        </div>
+                        <p class="text-xl">
+                            During my learning journey of HTML, CSS, and JavaScript, I undertook various projects,
+                            including creating website clones and interactive forms. These projects allowed me to apply
+                            theoretical concepts into practical scenarios, honing my skills and deepening my
+                            understanding of web development fundamentals.</p>
+                    </div>
+                    <div class="flex flex-col gap-4 m-auto my-10">
+                        <div class="projects_2 flex gap-6 pt-8 w-[85%] m-auto items-center pl-4">
+                            <img class="svg w-12" src="icons/projects.svg" alt="">
+                            <h1 class="font-semibold text-3xl">My Work</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[20%]  border-none">
+                        </div>
+                        <div class="projects_3 col flex gap-4 my-10 w-[85%] m-auto">
+                            <div class="row flex flex-col gap-6">
+                                <div class="card border border-gray p-4 rounded-xl bg-[#55555580]">
+                                    <video class="rounded-xl w-full" src="videos/Loginform.mp4" loop autoplay></video>
+                                </div>
+                                <div class="card border border-gray p-4 rounded-xl bg-[#55555580]">
+                                    <video class="w-full rounded-xl" src="videos/NetflixClone.mp4" loop
+                                        autoplay></video>
+                                </div>
+                            </div>
+                            <div class="row flex flex-col gap-6">
+                                <div class="card border border-gray p-4 rounded-xl bg-[#55555580]">
+                                    <video class="w-full rounded-xl" src="videos/StudySync.mp4" loop autoplay></video>
+                                </div>
+                                <div class="card border border-gray p-4 rounded-xl bg-[#55555580]">
+                                    <video class="w-full rounded-xl" src="videos/Twitter.mp4" loop autoplay></video>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="footer bg-gray-800 text-center font-semibold text-xl p-4 rounded-br-xl rounded-bl-2xl"> ©
+                        2024 All Rights Reserved </div>
+                </div>
+                <div class="content section" class="tools">
+                    <div class="tools_1 p-4 ml-16 flex flex-col gap-6 w-[90%]">
+                        <div class="flex gap-6 pt-8 items-center text-center mb-10">
+                            <h1 class="font-semibold text-4xl">Tools</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[30%]  border-none">
+                        </div>
+                        <p class="text-xl">
+                            In my diverse creative pursuits, spanning web development, logo design, video editing, and
+                            UI/UX design, I rely on a range of specialized tools tailored to each task. From coding
+                            frameworks like React to graphic design software such as Illustrator, seamless integration
+                            ensures polished solutions across projects, empowering me to deliver impactful outcomes..
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <div class="tools_2 flex gap-6 pt-8 w-[85%] m-auto items-center pl-4">
+                            <img class="svg w-12" src="icons/gear2.svg" alt="">
+                            <h1 class="font-semibold text-3xl">Software</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[20%]  border-none">
+                        </div>
+                        <div class="flex flex-wrap justify-center w-[70%] m-auto gap-12 mb-8 text-center items-center">
+                            <i style="filter: drop-shadow(0 0 1px #dd4b26af)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/html.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #1572B6)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/css.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #F5DE19)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/js.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #09C1E2)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/react.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #7211F5)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/bootstrap-5-logo-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #09C1E2)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/tailwind-css-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #FF7262)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/figma.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #2789DD)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/canva-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #001E36)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/lighroom.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #00005B)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/adobe-premiere-pro-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #1C3A4E)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/filmora-logo-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #007ACC)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/vscode.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #10A37F)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/chatgpt-icon.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #9863FF)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/vite.svg" alt=""></i>
+                            <i style="filter: drop-shadow(0 0 1px #F25325)" ;
+                                class="rounded-2xl border-gray-500 border p-3 bg-[#342f2f96] shadow-md shadow-white w-20"><img
+                                    src="tools/ms.svg" alt=""></i>
+                        </div>
+                    </div>
+                    <div></div>
+                    <div class="footer bg-gray-800 text-center font-semibold text-xl p-4 rounded-br-xl rounded-bl-2xl"> ©
+                        2024 All Rights Reserved </div>
+                </div>
+                <div class="content section" class="form">
+                    <div class="contact_1 p-4 ml-16 flex flex-col gap-6 w-[90%]">
+                        <div class="flex gap-6 pt-8 items-center text-center mb-10">
+                            <h1 class="font-semibold text-4xl">Contact</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[30%]  border-none">
+                        </div>
+                        <p class="text-xl">
+                            In my diverse creative pursuits, spanning web development, logo design, video editing, and
+                            UI/UX design, I rely on a range of specialized tools tailored to each task. From coding
+                            frameworks like React to graphic design software such as Illustrator, seamless integration
+                            ensures polished solutions across projects, empowering me to deliver impactful outcomes..
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <div class="contact_2 flex gap-6 pt-8 w-[85%] m-auto items-center pl-4">
+                            <img class="svg w-12" src="icons/contact.svg" alt="">
+                            <h1 class="font-semibold text-3xl">Fill This</h1>
+                            <hr class="bg-red-600 h-[3px] rounded-full w-[20%]  border-none">
+                        </div>
+                        <div class="contact-area">
+                            <form
+                                class="bg-[#252525a6] w-[90%] flex flex-col m-auto mb-8 border-gray-500 rounded-xl p-4"
+                                action="">
+                                <h1 style="color: var(--text-dark);" class="text-2x mb-3">Have a question or want to
+                                    discuss a project?</h1>
+                                <h1 class="text-xl text-red-100 mb-8">Feel free to reach out! Use the form below to get
+                                    in touch, and I'll respond promptly.</h1>
+                                <label class="bg-transparent w-full border-none font-normal text-2xl mb-3"
+                                    for="">Name*</label>
+                                <input
+                                    class="bg-[#ffffff16] rounded-xl p-2 w-full border-none font-normal text-2xl text-white outline-none"
+                                    type="text" aria-label="Your name">
+
+                                <label class="bg-transparent w-full border-none font-normal text-2xl mb-3"
+                                    for="">Email*</label>
+                                <input
+                                    class="bg-[#ffffff16] rounded-xl p-2 w-full border-none font-normal text-2xl text-white outline-none"
+                                    type="text" aria-label="Email Address">
+                                <label class="bg-transparent w-full border-none font-normal text-2xl mb-3"
+                                    for="">Message*</label>
+                                <textarea
+                                    class="bg-[#ffffff16] p-2 w-full h-[100px] rounded-xl border-none font-normal text-2xl mb-4 text-white outline-none"
+                                    name="" id="" cols="10" rows="10"></textarea>
+                                <button
+                                    class="pl-8 pr-8 py-4 text-xl font-medium rounded-2xl border-white border w-fit bg-red-300 hover:bg-red-400">Submit</button>
+                                    
+                            </form>
+
+                        </div>
+
+
+                    </div>
+                    <div class="footer bg-gray-800 text-center font-semibold text-xl p-4 rounded-br-xl rounded-bl-2xl"> ©
+                        2024 All Rights Reserved </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-[#151515fb] w-[80%] rounded-2xl m-auto fixed bottom-4 left-[10%] right-[10%] z-50">
+            <ul class="flex gap-4 justify-between py-4 px-2 items-center text-center">
+                <a href=""
+                    class="nav-link flex items-center flex-col justify-center w-[15%] rounded-xl font-semibold"
+                    onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                    onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                    <span class="text-2xl mb-3">
+                        <i><img class="w-8" src="icons/profile-1336-svgrepo-com.svg" alt=""></i>
+                    </span>
+                </a>
+                <a href=""
+                    class="nav-link flex items-center flex-col justify-center w-[15%] rounded-xl font-semibold"
+                    onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                    onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                    <span class="text-2xl mb-3">
+                        <i><img class="w-8" src="icons/document-svgrepo-com.svg" alt=""></i>
+                    </span>
+                </a>
+                <a href=""
+                    class="nav-link flex items-center flex-col justify-center w-[15%] rounded-xl font-semibold"
+                    onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                    onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                    <span class="text-2xl mb-3">
+                        <i><img class="w-8" src="icons/work-case-svgrepo-com.svg" alt=""></i>
+                    </span>
+                </a>
+                <a href=""
+                    class="nav-link flex items-center flex-col justify-center w-[15%] rounded-xl font-semibold"
+                    onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                    onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                    <span class="text-2xl mb-3">
+                        <i><img class="w-8" src="icons/tools-svgrepo-com.svg" alt=""></i>
+                    </span>
+                </a>
+                <a href=""
+                    class="nav-link flex items-center flex-col justify-center w-[15%] rounded-xl font-semibold"
+                    onmouseover="this.style.backgroundColor = 'rgb(248, 127, 127)'"
+                    onmouseout="this.style.backgroundColor = 'var(--content-dark)'">
+                    <span class="text-2xl mb-3">
+                        <i><img class="w-7" src="icons/book-contact-ui-web-svgrepo-com.svg" alt=""></i>
+                    </span>
+                </a>
+            </ul>
+        </footer>
+    <script src="style.js"></script>
+</body>
+
+</html>
