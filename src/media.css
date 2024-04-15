@@ -138,7 +138,7 @@ footer{
         padding: 0px;
     }
     .card{
-        width: 90%;
+        width: fit-content;
     }
     .card_child{
         flex-direction: column;
